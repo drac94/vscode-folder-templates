@@ -1,0 +1,50 @@
+{
+  "folderTemplates.structures": [
+    {
+      "name": "React TS/Emotion/Storybook",
+      "structure": [
+        {
+          "fileName": "<FTName>.tsx",
+          "template": "View Component"
+        },
+        {
+          "fileName": "<FTName>.styled.ts",
+          "template": "Emotion File"
+        },
+        {
+          "fileName": "tests/<FTName>.test.ts"
+        },
+        {
+          "fileName": "stories/<FTName>.story.tsx"
+        },
+        {
+          "fileName": "index.ts",
+          "template": "IndexFile"
+        }
+      ]
+    }
+  ],
+  "folderTemplates.fileTemplates": {
+    "View Component": [
+      "import React from 'react';",
+      "",
+      "import { Container } from './<FTName>.styled';",
+      "",
+      "type Props = {};",
+      "",
+      "const <FTName> = (props: Props): JSX.Element => {",
+      "  return <Container><FTName></Container>;",
+      "};",
+      "",
+      "export default <FTName>;"
+    ],
+    "Emotion File": [
+      "import styled from '@emotion/styled';",
+      "",
+      "export const Container = styled.div`",
+      "  padding: 32px;",
+      "`;"
+    ],
+    "IndexFile": "export { default } from './<FTName>';"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "folderTemplates.structures": [
     {
-      "name": "React GraphQL/TS/Emotion/Storybook",
+      "name": "React TS/GraphQL/Emotion/Storybook",
       "structure": [
         {
           "fileName": "<FTName>.compound.tsx",
@@ -27,7 +27,7 @@
         },
         {
           "fileName": "index.ts",
-          "template": "IndexFile"
+          "template": "IndexCompoundFile"
         }
       ]
     }
@@ -84,6 +84,6 @@
       "  padding: 32px;",
       "`;"
     ],
-    "IndexFile": "export { default } from './<FTName>.compound';"
+    "IndexCompoundFile": "export { default } from './<FTName>.compound';"
   }
 }
