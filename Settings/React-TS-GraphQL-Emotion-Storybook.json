@@ -1,0 +1,89 @@
+{
+  "folderTemplates.structures": [
+    {
+      "name": "React GraphQL/TS/Emotion/Storybook",
+      "structure": [
+        {
+          "fileName": "<FTName>.compound.tsx",
+          "template": "Compound Component"
+        },
+        {
+          "fileName": "<FTName>.tsx",
+          "template": "View Component"
+        },
+        {
+          "fileName": "<FTName>.query.ts",
+          "template": "GraphQL File"
+        },
+        {
+          "fileName": "<FTName>.styled.ts",
+          "template": "Emotion File"
+        },
+        {
+          "fileName": "tests/<FTName>.test.ts"
+        },
+        {
+          "fileName": "stories/<FTName>.story.tsx"
+        },
+        {
+          "fileName": "index.ts",
+          "template": "IndexFile"
+        }
+      ]
+    }
+  ],
+  "folderTemplates.fileTemplates": {
+    "Compound Component": [
+      "import React from 'react';",
+      "",
+      "import <FTName> from './<FTName>';",
+      "import { QUERY, MUTATION } from './<FTName>.query';",
+      "",
+      "const <FTName>Compound = (): JSX.Element => {",
+      "  return <<FTName> />;",
+      "};",
+      "",
+      "export default <FTName>Compound;"
+    ],
+    "View Component": [
+      "import React from 'react';",
+      "",
+      "import { Container } from './<FTName>.styled';",
+      "",
+      "type Props = {};",
+      "",
+      "const <FTName> = (props: Props): JSX.Element => {",
+      "  return <Container><FTName></Container>;",
+      "};",
+      "",
+      "export default <FTName>;"
+    ],
+    "GraphQL File": [
+      "import { gql } from '@apollo/client';",
+      "",
+      "export const QUERY = gql`",
+      "  query QueryName {",
+      "    queryName {",
+      "      id",
+      "    }",
+      "  }",
+      "`;",
+      "",
+      "export const MUTATION = gql`",
+      "  mutation MutationName($arg1: String!, $arg2: String!) {",
+      "    mutationName(arg1: $arg1, arg2: $arg2) {",
+      "      id",
+      "    }",
+      "  }",
+      "`;"
+    ],
+    "Emotion File": [
+      "import styled from '@emotion/styled';",
+      "",
+      "export const Container = styled.div`",
+      "  padding: 32px;",
+      "`;"
+    ],
+    "IndexFile": "export { default } from './<FTName>.compound';"
+  }
+}
